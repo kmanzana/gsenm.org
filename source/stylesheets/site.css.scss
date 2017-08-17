@@ -2,6 +2,10 @@ $hdr-font-color: black;
 $hdr-font-stack: 'Poppins', sans-serif;/* 'Muli', sans-serif, 'Poppins', sans-serif, 'Quicksand', sans-serif, 'Hind', sans-serif;*/
 $hdr-font-size: 17px;
 
+$home-hdr-font-color: white;
+
+$slider-font-stack: 'Muli', sans-serif;
+
 /* Header CSS */
 .gs-logo-hdr {
   height: 46px;
@@ -11,6 +15,56 @@ $hdr-font-size: 17px;
   color: $hdr-font-color;
   font-family: $hdr-font-stack;
   font-size: $hdr-font-size;
+}
+
+.gs-home-hdr-text {
+  color: $home-hdr-font-color;
+  font-family: $hdr-font-stack;
+  font-size: $hdr-font-size;
+}
+
+/* Slider CSS */
+
+.gs-slider-lyr1 {
+  z-index: 5; 
+  white-space: nowrap; 
+  font-size: 140px; 
+  line-height: 150px; 
+  font-weight: 900; 
+  color: #ffffff!important; 
+  letter-spacing: 5px;
+  font-family: $hdr-font-stack;
+  /*ext-transform:lowercase;*/
+  letter-spacing:0.04em;
+}
+
+.gs-slider-lyr3 {
+  z-index: 7; 
+  white-space: nowrap; 
+  font-size: 20px; 
+  line-height: 40px; 
+  font-weight: 400; 
+  color: #ffffff; 
+  letter-spacing: 2px;
+  font-family: $slider-font-stack;
+  /*text-transform:lowercase;*/
+}
+
+.gs-slider-lyr4 {
+  z-index: 8; 
+  white-space: nowrap; 
+  font-size: 20px; 
+  line-height: 22px; 
+  font-weight: 600; 
+  color: #ffffff; 
+  letter-spacing: 0px;
+  font-family:Raleway;
+}
+
+.gs-slider-btn {
+  color: #ffffff!important; 
+  background-color: #F0691B!important; 
+   border-color: #F0691B!important;
 }
 
 /* Footer CSS */
