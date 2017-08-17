@@ -1,10 +1,13 @@
 $hdr-font-color: black;
 $hdr-font-stack: 'Poppins', sans-serif;/* 'Muli', sans-serif, 'Poppins', sans-serif, 'Quicksand', sans-serif, 'Hind', sans-serif;*/
 $hdr-font-size: 17px;
-
+$hdr-font-color-hv: #F0691B;
 $home-hdr-font-color: white;
 
 $slider-font-stack: 'Muli', sans-serif;
+
+$title-text-font-stack: 'Poppins', sans-serif;
+$text-font-stack: 'Muli', sans-serif;
 
 /* Header CSS */
 .gs-logo-hdr {
@@ -17,10 +20,18 @@ $slider-font-stack: 'Muli', sans-serif;
   font-size: $hdr-font-size;
 }
 
+.gs-hdr-text:hover {
+  color: $hdr-font-color-hv;
+}
+
 .gs-home-hdr-text {
   color: $home-hdr-font-color;
   font-family: $hdr-font-stack;
   font-size: $hdr-font-size;
+}
+
+.gs-home-hdr-text:hover {
+  color: $hdr-font-color-hv;
 }
 
 /* Slider CSS */
@@ -98,14 +109,7 @@ $slider-font-stack: 'Muli', sans-serif;
 }
 
 
-/*
-.mkd-separator-holder{position:relative;height:auto;font-size:0;line-height:1em}
-.mkd-separator-holder.mkd-separator-center{text-align:center}
-.mkd-separator-holder.mkd-separator-left{text-align:left}
-.mkd-separator-holder.mkd-separator-right{text-align:right}
-.mkd-separator-holder.mkd-separator-full-width .mkd-separator{width:100%!important}
-.mkd-separator{position:relative;display:inline-block;vertical-align:middle;border-bottom:1px solid #54ddd1;margin:10px 0}
-*/
+/* Footer */
 
 .gs-logo {
   height: 60px
@@ -117,12 +121,43 @@ $slider-font-stack: 'Muli', sans-serif;
   border-color: #F0691B!important;
 }
 
-.gs-text {
+.gs-footer-text {
   color: #ffffff;
+  font-family: $text-font-stack;
 }
+
+.gs-footer-title-text {
+  color: #ffffff;
+  font-family: $title-text-font-stack;
+  font-size: 25px;
+}
+
+.gs-link {
+  color: #9d9df9;
+  text-decoration: underline;
+  text-decoration-color: #9d9df9;
+}
+
 
 /* Index */
 
 .gs-article-size {
   width: 50%!important;
+}
+
+.gs-title-text {
+  color: black;
+  font-family: $title-text-font-stack;
+  a:hover {
+    color: $hdr-font-color-hv!important;
+  }
+  a{
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.gs-text {
+  color: #7f8999;
+  font-family: $text-font-stack;  
 }
