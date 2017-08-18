@@ -124,6 +124,7 @@ $text-font-stack: 'Muli', sans-serif;
   color: #ffffff;
   background-color: #F0691B!important; 
   border-color: #F0691B!important;
+  font-family: $text-font-stack!important;
 }
 
 .gs-footer-text {
@@ -141,6 +142,13 @@ $text-font-stack: 'Muli', sans-serif;
   color: #9d9df9;
   text-decoration: underline;
   text-decoration-color: #9d9df9;
+}
+
+.gs-icon-link {
+  color: white;
+  i:hover {
+    color: $hdr-font-color-hv!important;
+  }
 }
 
 
