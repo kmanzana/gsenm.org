@@ -2,20 +2,41 @@
 title: About|Grand Staircase Escalante Partners
 ---
 
+<!DOCTYPE html>
+<html lang="en-US">
+<%= partial "head" %>
 
-<%= partial "top" %>
+<body class="home page-template page-template-full-width page-template-full-width-php page page-id-5 mkd-core-1.1.2 ecologist-ver-1.0  mkd-grid-1300 mkd-blog-installed mkd-boxed-widgets mkd-header-standard mkd-sticky-header-on-scroll-up mkd-default-mobile-header mkd-sticky-up-mobile-header mkd-dropdown-default mkd-light-header mkd-full-width-wide-menu mkd-header-standard-shadow-disable mkd-header-standard-in-grid-shadow-disable mkd-top-bar-light mkd-fullscreen-search mkd-fullscreen-search-with-bg-image mkd-search-fade mkd-side-menu-slide-with-content mkd-width-470 mkd-woocommerce-columns-4 mkd-woo-single-has-pretty-photo wpb-js-composer js-comp-ver-5.1.1 vc_responsive" itemscope itemtype="http://schema.org/WebPage">
 
-<a id="mkd-back-to-top" href='#'>
-  <span class="mkd-back-to-top-icon">
-    <i class="mkd-icon-ion-icon ion-chevron-up " >
-    </i>
-  </span>
-</a>
+<%= partial "sidebar" %>
+
+<div class="mkd-wrapper">
+  <div class="mkd-wrapper-inner">
+    <div class="mkd-fullscreen-search-holder">
+      <div class="mkd-fullscreen-search-table">
+        <div class="mkd-fullscreen-search-cell">
+          <div class="mkd-fullscreen-search-inner">
+            <form action="http://ecologist.mikado-themes.com/" class="mkd-fullscreen-search-form" method="get">
+              <div class="mkd-field-holder">
+                <input type="text" name="s" placeholder="search" class="mkd-search-field" autocomplete="off"/>
+                <div class="mkd-line"></div>
+                <input type="submit" class="mkd-search-submit" value="&#xf21f;"/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= partial "home_header" %>
+
 <div class="mkd-content" style="margin-top: -100px">
   <div class="mkd-content-inner">
-    <div class="mkd-title mkd-standard-type mkd-preload-background mkd-has-background mkd-has-parallax-background mkd-content-center-alignment mkd-title-in-grid mkd-animation-no mkd-title-image-not-responsive" style="color:#ffffff;;background-image:url(http://ecologist.mikado-themes.com/wp-content/uploads/2017/04/about-us-title.jpg);;height:620px;" data-height="620" data-background-width=&quot;1920&quot;>
+    <div class="mkd-title mkd-standard-type mkd-content-center-alignment mkd-title-in-grid mkd-animation-no mkd-title-image-not-responsive" style="color:#ffffff;background-image:url(/images/rainbow.jpg);height:620px;" data-height="620" data-background-width="1920";>
       <div class="mkd-title-image">
-        <img src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/04/about-us-title.jpg" alt="&nbsp;"/>
+        <img src="images/rainbow.jpg" alt="rainbow"/>
       </div>
       <div class="mkd-title-holder" >
         <div class="mkd-container clearfix">
@@ -49,23 +70,16 @@ title: About|Grand Staircase Escalante Partners
                     <div class="vc_column-inner ">
                       <div class="wpb_wrapper">
                         <div class="mkd-elements-holder mkd-responsive-mode-1280 mkd-one-column-alignment-center" >
-                          <div class="mkd-elements-holder-item mkd-width-1-2 mkd-vertical-alignment-middle mkd-horizontal-alignment-center" data-item-class="mkd-elements-holder-custom-393396" data-1024-1280="0px 45px 0px 0px" data-768-1024="0 0px " data-480="0 2px 0 2px" >
+                          <div class="mkd-elements-holder-item mkd-width-1-2 mkd-vertical-alignment-middle mkd-horizontal-alignment-center" data-item-class="mkd-elements-holder-custom-358229" data-1024-1280="0px 45px 0px 0px" data-768-1024="0 0px " data-480="0 2px 0 2px" >
                             <div class="mkd-elements-holder-item-inner">
-                              <div class="mkd-elements-holder-item-content mkd-elements-holder-custom-393396" style="padding: 0px 75px 0px 0px ">
+                              <div class="mkd-elements-holder-item-content mkd-elements-holder-custom-358229" style="padding: 0px 75px 0px 0px ">
                                 <div class="mkd-elements-holder-item-content-inner">
-                                  <div class="wpb_text_column wpb_content_element " >
-                                    <div class="wpb_wrapper">
-                                      <h4 style="text-align: left;">
-                                        <span style="color: #54ddd1;">what we do </span>
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div data-original-height="11" class="vc_empty_space"  style="height: 11px" >
+                                  <div data-original-height="40" class="vc_empty_space"  style="height: 40" >
                                     <span class="vc_empty_space_inner"></span>
                                   </div>
                                   <div class="wpb_text_column wpb_content_element " >
                                     <div class="wpb_wrapper">
-                                      <h3 style="text-align: left;">visually stunning experiences for web.</h3>
+                                      <h3 class="gs-title-text" style="text-align: left;">The Monument</h3>
                                     </div>
                                   </div>
                                   <div data-original-height="4" class="vc_empty_space"  style="height: 4px" >
@@ -73,8 +87,11 @@ title: About|Grand Staircase Escalante Partners
                                   </div>
                                   <div class="wpb_text_column wpb_content_element " >
                                     <div class="wpb_wrapper">
-                                      <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium ac quis nunc. Proin nibh risus, tempus ac commodo eu, finibus a nulla. Vestibulum at tellus ex. Aenean aliquam, lacus auctor fringilla euismod, sapien enim eleifend ante, nec suscipit nibh massa quis ex. Sed turpis neque, blandit nec rutrum eu, lobortis sit amet sem.  Duis ex nisl, interdum sit amet elementum dapibus, sollicitudin sagittis metus. Nunc vulputate augue id laoreet suscipit. Aenean vitae ex lobortis metus lacinia facilisis sit ametac. Etiam sollicitudin lacus eget placerat venenatis. Morbi malesuada volutpat ipsum eu gravida</p>
+                                      <p class="gs-text" style="text-align: left;">Grand Staircase-Escalante National Monument’s vast and austere landscape embraces a spectacular array of scientific and historic resources. This is a high, rugged and remote region, where bold plateaus and multi-hued cliffs run for distances, defying human perspective. It was the last place in the continental United States to be mapped. These strikingly beautiful and scientifically important lands are divided into three distinct regions: the Grand Staircase, the Kaiparowits Plateau and the Canyons of the Escalante. Grand Staircase-Escalante National Monument encompasses 1.9 million acres of southern Utah canyons, cliffs and plateaus.</p>
                                     </div>
+                                  </div>
+                                  <div data-original-height="20" class="vc_empty_space"  style="height: 20" >
+                                    <span class="vc_empty_space_inner"></span>
                                   </div>
                                 </div>
                               </div>
@@ -94,17 +111,15 @@ title: About|Grand Staircase Escalante Partners
                               <div class="mkd-elements-holder-item-content mkd-elements-holder-custom-122470" style="padding: 16px 0 0px 0">
                                 <div class="mkd-elements-holder-item-content-inner">
                                   <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
-                                    <div class="mkd-iwt-icon-holder">
-                                      <span class="mkd-icon-shortcode normal" style="margin: 0 45px 0 0 " data-color="#54ddd1">
-                                        <i class="mkd-icon-ion-icon ion-earth mkd-icon-element" style="color: #54ddd1;font-size:48px" ></i>
-                                      </span>
-                                    </div>
                                     <div class="mkd-iwt-content-holder" style="padding: 0 0 0 85px">
+                                      <div data-original-height="20" class="vc_empty_space"  style="height: 20" >
+                                        <span class="vc_empty_space_inner"></span>
+                                      </div>
                                       <div class="mkd-iwt-title-holder">
-                                        <h5 class="mkd-iwt-title" style="text-transform: lowercase;font-weight: 800;letter-spacing: 25">having a plan feels good.</h5>
+                                        <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 25">Scientific</h5>
                                       </div>
                                     <div class="mkd-iwt-text-holder">
-                                      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc. Proin nibh risus, tempus ac commodo eu, finibus a nulla. Vestibulum at tellus ex.</p>
+                                      <p class="gs-text">Even today, this unspoiled natural area remains a frontier, a quality that greatly enhances Grand Staircase’s value for scientific study and presents exemplary opportunities for geologists, paleontologists, archaeologists, historians, and biologists.</p>
                                     </div>
                                   </div>
                                 </div>
@@ -112,17 +127,12 @@ title: About|Grand Staircase Escalante Partners
                                   <div class="mkd-separator" style="border-color: #eaeaea;border-style: solid;width: 630px;margin-top: 28px;margin-bottom: 34px"></div>
                                 </div>
                                 <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
-                                  <div class="mkd-iwt-icon-holder">
-                                    <span class="mkd-icon-shortcode normal" style="margin: 0px 5px 0px 3px" data-color="#54ddd1">
-                                      <i class="mkd-icon-ion-icon ion-android-sync mkd-icon-element" style="color: #54ddd1;font-size:60px" ></i>
-                                    </span>
-                                  </div>
                                   <div class="mkd-iwt-content-holder" style="padding: 0 0 0 85px">
                                     <div class="mkd-iwt-title-holder">
-                                      <h5 class="mkd-iwt-title" style="text-transform: lowercase;font-weight: 800;letter-spacing: 0px"      >a true businees partner</h5>
+                                      <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 0px"      >Historic</h5>
                                     </div>
                                     <div class="mkd-iwt-text-holder">
-                                      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc. Proin nibh risus, tempus ac commodo eu, finibus a nulla. Vestibulum at tellus ex. </p>
+                                      <p class="gs-text" style="padding-bottom: 20px">These nearly 2 million acres were designated a national monument on Sept. 18, 1996. Grand Staircase is administered by the Bureau of Land Management (BLM), and in 2000, became the first unit of BLM’s National Landscape Conservation System. </p>
                                     </div>
                                   </div>
                                 </div>
@@ -151,117 +161,107 @@ title: About|Grand Staircase Escalante Partners
                             </div>
                           </div>
                         </div>
-                        <div class="mkd-elements-holder-item-bgrnd"  style="background-image: url(http://ecologist.mikado-themes.com/wp-content/uploads/2017/04/about-us-img-1.jpg)"></div>
+                        <div class="mkd-elements-holder-item-bgrnd"  style="background-image: url(/images/arch.jpg)"></div>
                       </div>
                       <div class="mkd-elements-holder-item mkd-width-1-2 mkd-vertical-alignment-middle mkd-horizontal-alignment-center" data-item-class="mkd-elements-holder-custom-866030" data-1280-1440="9px 15%" data-1024-1280="9px 80px" data-768-1024="9px 150px 8px 150px" data-600-768="40px 65px 40px 65px" data-480="0 40px 0 40px" >
                         <div class="mkd-elements-holder-item-inner">
                           <div class="mkd-elements-holder-item-content mkd-elements-holder-custom-866030" style="padding: 9px 220px 8px 130px">
                             <div class="mkd-elements-holder-item-content-inner">
-                              <div data-original-height="120" class="vc_empty_space"  style="height: 120px" >
+                              <div data-original-height="20" class="vc_empty_space"  style="height: 20px" >
                                 <span class="vc_empty_space_inner"></span>
                               </div>
                               <div class="wpb_text_column wpb_content_element " >
                                 <div class="wpb_wrapper">
                                   <h3 style="text-align: left;">
-                                    <span style="color: #ffffff;">what we do</span>
+                                    <span class="gs-title-text">Our Job</span>
                                   </h3>
                                 </div>
                               </div>
-                              <div data-original-height="26" class="vc_empty_space"  style="height: 26px" >
+                              <div data-original-height="20" class="vc_empty_space"  style="height: 20px" >
                                 <span class="vc_empty_space_inner"></span>
                               </div>
                               <div class="mkd-section-subtitle-holder mkd-section-subtitle-left" >
-                                <p style="color: #ffffff;text-align: left" class="mkd-section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac nulla a elit gravida venenatis pellente</p>
+                                <p style="text-align: left" class="mkd-section-subtitle gs-subhdr-text">We are the official support organization for Grand Staircase-Escalante National Monument</p>
                               </div>
-                              <div data-original-height="40" class="vc_empty_space"  style="height: 40px" >
+                              <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
                                 <span class="vc_empty_space_inner"></span>
                               </div>
                               <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
                                 <div class="mkd-iwt-icon-holder">
-                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="#ffffff">
-                                    <i class="mkd-icon-ion-icon ion-android-sunny mkd-icon-element" style="color: #ffffff;font-size:50px" ></i>
+                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="">
+                                    <i class="fa fa-flask fa-3x" style="padding-left: 3px" aria-hidden="true"></i>
                                   </span>
                                 </div>
                                 <div class="mkd-iwt-content-holder" >
                                   <div class="mkd-iwt-text-holder">
-                                    <p style="color: #ffffff">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc.</p>
+                                    <p class="gs-text">Promote science, education and conservation on the Monument</p>
                                   </div>
                                 </div>
                               </div>
-                              <div data-original-height="30" class="vc_empty_space"  style="height: 30px" >
+                              <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
                                 <span class="vc_empty_space_inner"></span>
                               </div>
                               <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
                                 <div class="mkd-iwt-icon-holder">
-                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="#ffffff">
-                                    <i class="mkd-icon-ion-icon ion-ios-cloud-outline mkd-icon-element" style="color: #ffffff;font-size:50px" ></i>
+                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="">
+                                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
                                   </span>
                                 </div>
                                 <div class="mkd-iwt-content-holder" >
                                   <div class="mkd-iwt-text-holder">
-                                    <p style="color: #ffffff">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc.</p>
+                                    <p class="gs-text">Expand our membership so we represent a constituency that supports the Monument</p>
                                   </div>
                                 </div>
                               </div>
-                              <div data-original-height="113" class="vc_empty_space"  style="height: 113px" >
+                              <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
                                 <span class="vc_empty_space_inner"></span>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="mkd-elements-holder-item-bgrnd"  style="background-color: #54ddd1"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="vc_row wpb_row vc_row-fluid mkd-section vc_custom_1493901842044 mkd-content-aligment-left mkd-grid-section" style="">
-            <div class="clearfix mkd-section-inner">
-              <div class="mkd-section-inner-margin clearfix">
-                <div class="wpb_column vc_column_container vc_col-sm-12">
-                  <div class="vc_column-inner ">
-                    <div class="wpb_wrapper">
-                      <div class="mkd-testimonials-holder clearfix dark">
-                        <div class="mkd-testimonials testimonials-slider mkd-dark-navigation" >
-                          <div class="mkd-testimonial-content testimonials-slider">
-                            <div class="mkd-testimonial-author-image-quote">
-                              <div class="mkd-testimonial-author-image">
-                                <img width="107" height="107" src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/04/t1.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="a" />
-                              </div>
-                            </div>
-                            <div class="mkd-testimonial-content-inner">
-                              <div class="mkd-testimonial-text-holder">
-                                <div class="mkd-testimonial-text-inner ">
-                                  <h4 class="mkd-testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc. Proin nibh risus, tempus ac commodo eu, finibus a nulla</h4>
-                                  <div class="mkd-testimonial-author">
-                                    <h6 class="mkd-testimonial-author-text ">Richard Fields</h6>
-                                    <p class="mkd-testimonials-job ">Designer</p>
+                              <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
+                                <div class="mkd-iwt-icon-holder">
+                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="">
+                                    <i class="fa fa-lightbulb-o fa-3x" style="padding-left: 9px" aria-hidden="true"></i>
+                                  </span>
+                                </div>
+                                <div class="mkd-iwt-content-holder" >
+                                  <div class="mkd-iwt-text-holder">
+                                    <p class="gs-text">Increase public awareness and understanding about the Monument</p>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          <div class="mkd-testimonial-content testimonials-slider">
-                            <div class="mkd-testimonial-author-image-quote">
-                              <div class="mkd-testimonial-author-image">
-                                <img width="107" height="107" src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/04/t2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="a" />
+                              <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
+                                <span class="vc_empty_space_inner"></span>
                               </div>
-                            </div>
-                            <div class="mkd-testimonial-content-inner">
-                              <div class="mkd-testimonial-text-holder">
-                                <div class="mkd-testimonial-text-inner ">
-                                  <h4 class="mkd-testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed urna a sem pretium porta ac quis nunc. Proin nibh risus, tempus ac commodo eu, finibus a nulla</h4>
-                                  <div class="mkd-testimonial-author">
-                                    <h6 class="mkd-testimonial-author-text ">John Gambl</h6>
-                                    <p class="mkd-testimonials-job ">Graphic Designer</p>
+                              <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
+                                <div class="mkd-iwt-icon-holder">
+                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="">
+                                    <i class="fa fa-info-circle fa-3x" style="padding-left: 3px"  aria-hidden="true"></i>
+                                  </span>
+                                </div>
+                                <div class="mkd-iwt-content-holder" >
+                                  <div class="mkd-iwt-text-holder">
+                                    <p class="gs-text">Provide resources to support the Monument’s scientific, interpretive and educational programs</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
+                                <span class="vc_empty_space_inner"></span>
+                              </div>
+                              <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
+                                <div class="mkd-iwt-icon-holder">
+                                  <span class="mkd-icon-shortcode normal" style="margin: 5px 0 0 0" data-color="">
+                                    <i class="fa fa-recycle fa-3x" aria-hidden="true"></i>
+                                  </span>
+                                </div>
+                                <div class="mkd-iwt-content-holder" >
+                                  <div class="mkd-iwt-text-holder">
+                                    <p class="gs-text">Recruit volunteers. <strong>Come <a href="/get_involved.html" class="gs-link">get involved</a><strong></p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <div class="mkd-elements-holder-item-bgrnd"  style="background-color: white"></div>
                       </div>
                     </div>
                   </div>

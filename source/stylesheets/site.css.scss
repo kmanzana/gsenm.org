@@ -108,8 +108,13 @@ $text-font-stack: 'Muli', sans-serif;
   float: right!important
 }
 
+.gs-fb-icon {
+  color: white;
+}
 
-/* Footer */
+.gs-fb-icon:hover {
+  color: #F0691B;
+}
 
 .gs-logo {
   height: 60px
@@ -157,7 +162,25 @@ $text-font-stack: 'Muli', sans-serif;
   }
 }
 
+.gs-subhdr-text {
+  color: #7f8999;
+  font-family: $text-font-stack;  
+  font-size: 16x;
+}
+
 .gs-text {
   color: #7f8999;
   font-family: $text-font-stack;  
+  a:hover{
+    color: $hdr-font-color-hv!important;
+  }
 }
+
+.arrow-icon {
+  color: black;
+}
+
+.arrow-icon:hover {
+  color: #F0691B;
+}
+
