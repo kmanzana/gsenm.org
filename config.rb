@@ -1,65 +1,75 @@
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
-
-# Layouts
-# https://middlemanapp.com/basics/layouts/
+require 'dotenv/load'
 
 # Per-page layout changes
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
-# page '/path/to/file.html', layout: 'other_layout'
-
 # Proxy pages
-# https://middlemanapp.com/advanced/dynamic-pages/
-
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   },
-# )
-
-# Helpers
-# Methods defined in the helpers block are available in templates
-# https://middlemanapp.com/basics/helper-methods/
-
-# helpers do
-#   def some_helper
-#     'Helping'
+# KM 8/26/17: due to how middleman 4 collections work (http://bit.ly/2jHZTI9),
+# always use `dato` inside a `.tap` method block
+# dato.tap do |dato|
+#   dato.programs.each do |program|
+#     proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
+#       program: program
+#     }, ignore: true
 #   end
 # end
 
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
+# Helpers
+helpers do
+  def markdown(source)
+    Tilt[:markdown].new { source }.render(self)
+  end
+end
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
+# Configuration
+activate :autoprefixer do |prefix|
+  prefix.browsers = 'last 2 versions'
+end
+
+configure :development do
+  # activate :dato, live_reload: true
+  activate :livereload
+end
+
+configure :build do
+  activate :asset_hash
+  activate :gzip
+  # activate :imageoptim # doesn't support MM4 https://github.com/plasticine/middleman-imageoptim/issues/46
+  activate :minify_css
+  activate :minify_html
+  activate :minify_javascript
+end
+
+# configure :staging do
+#   activate :s3_sync do |s3_sync|
+#     s3_sync.bucket                     = 'gsenmpartners'
+#     s3_sync.region                     = 'us-west-2'
+#     s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
+#     s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
+#     s3_sync.prefix                     = ''
+#     s3_sync.index_document             = 'index.html'
+#     s3_sync.error_document             = '404.html'
+#     s3_sync.prefer_gzip                = true
+#   end
+
+#   caching_policy 'text/html', max_age: 0, must_revalidate: true
+#   default_caching_policy max_age:(60 * 60 * 24 * 365)
 # end
 
-require 'dotenv/load'
+configure :production do
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket                     = 'gsenmpartners.com'
+    s3_sync.region                     = 'us-west-2'
+    s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
+    s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
+    s3_sync.prefix                     = ''
+    s3_sync.index_document             = 'index.html'
+    s3_sync.error_document             = '404.html'
+  end
 
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'gsenmpartners.com' # The name of the S3 bucket you are targeting. This is globally unique.
-  s3_sync.region                     = 'us-west-2'     # The AWS region for your bucket.
-  s3_sync.aws_access_key_id          = ENV['ACCESS_KEY']
-  s3_sync.aws_secret_access_key      = ENV['SECRET_KEY']
-  s3_sync.delete                     = false # We delete stray files by default.
-  s3_sync.after_build                = false # We do not chain after the build step by default.
-  s3_sync.prefer_gzip                = true
-  s3_sync.path_style                 = true
-  s3_sync.reduced_redundancy_storage = false
-  s3_sync.acl                        = 'public-read'
-  s3_sync.encryption                 = false
-  s3_sync.prefix                     = ''
-  s3_sync.version_bucket             = false
+  caching_policy 'text/html', max_age: 0, must_revalidate: true
+  default_caching_policy max_age:(60 * 60 * 24 * 365)
 end
 
