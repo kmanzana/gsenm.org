@@ -11,7 +11,7 @@ $text-font-stack: 'Muli', sans-serif;
 
 /* Header CSS */
 .gs-logo-hdr {
-  height: 46px;
+  height: 70px;
 }
 
 .gs-hdr-text {
@@ -37,12 +37,12 @@ $text-font-stack: 'Muli', sans-serif;
 /* Slider CSS */
 
 .gs-slider-lyr1 {
-  z-index: 5; 
-  white-space: nowrap; 
-  font-size: 140px; 
-  line-height: 150px; 
-  font-weight: 900; 
-  color: #ffffff!important; 
+  z-index: 5;
+  white-space: nowrap;
+  font-size: 140px;
+  line-height: 150px;
+  font-weight: 900;
+  color: #ffffff!important;
   letter-spacing: 5px;
   font-family: $hdr-font-stack;
   /*ext-transform:lowercase;*/
@@ -50,31 +50,31 @@ $text-font-stack: 'Muli', sans-serif;
 }
 
 .gs-slider-lyr3 {
-  z-index: 7; 
-  white-space: nowrap; 
-  font-size: 20px; 
-  line-height: 40px; 
-  font-weight: 400; 
-  color: #ffffff; 
+  z-index: 7;
+  white-space: nowrap;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #ffffff;
   letter-spacing: 2px;
   font-family: $slider-font-stack;
   /*text-transform:lowercase;*/
 }
 
 .gs-slider-lyr4 {
-  z-index: 8; 
-  white-space: nowrap; 
-  font-size: 20px; 
-  line-height: 22px; 
-  font-weight: 600; 
-  color: #ffffff; 
+  z-index: 8;
+  white-space: nowrap;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #ffffff;
   letter-spacing: 0px;
   font-family:Raleway;
 }
 
 .gs-slider-btn {
-  color: #ffffff!important; 
-  background-color: #F0691B!important; 
+  color: #ffffff!important;
+  background-color: #F0691B!important;
    border-color: #F0691B!important;
 }
 
@@ -117,12 +117,12 @@ $text-font-stack: 'Muli', sans-serif;
 }
 
 .gs-logo {
-  height: 60px
+  height: 70px
 }
 
 .gs-button {
   color: #ffffff;
-  background-color: #F0691B!important; 
+  background-color: #F0691B!important;
   border-color: #F0691B!important;
   font-family: $text-font-stack!important;
 }
@@ -172,13 +172,13 @@ $text-font-stack: 'Muli', sans-serif;
 
 .gs-subhdr-text {
   color: #7f8999;
-  font-family: $text-font-stack;  
+  font-family: $text-font-stack;
   font-size: 16x;
 }
 
 .gs-text {
   color: #7f8999;
-  font-family: $text-font-stack;  
+  font-family: $text-font-stack;
   a:hover{
     color: $hdr-font-color-hv!important;
   }
@@ -191,4 +191,3 @@ $text-font-stack: 'Muli', sans-serif;
 .arrow-icon:hover {
   color: #F0691B;
 }
-
