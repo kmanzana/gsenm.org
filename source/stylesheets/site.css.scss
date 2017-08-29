@@ -191,3 +191,11 @@ $text-font-stack: 'Muli', sans-serif;
 .arrow-icon:hover {
   color: #F0691B;
 }
+
+.gs-photo-credit {
+  float: right;
+  padding-top: 80%;
+  padding-right: 10px;
+  color: white;
+  font-family: $text-font-stack;
+}
