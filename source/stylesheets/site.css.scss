@@ -125,6 +125,7 @@ $text-font-stack: 'Muli', sans-serif;
   background-color: #F0691B!important;
   border-color: #F0691B!important;
   font-family: $text-font-stack!important;
+  padding: 14px 16px 12px;
 }
 
 .gs-footer-text {
@@ -194,7 +195,7 @@ $text-font-stack: 'Muli', sans-serif;
 
 .gs-photo-credit {
   float: right;
-  padding-top: 80%;
+  padding-top: 74%;
   padding-right: 10px;
   color: white;
   font-family: $text-font-stack;
