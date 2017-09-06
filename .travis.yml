@@ -10,8 +10,6 @@ branches:
   only:
   - master
   # - staging
-before_install:
-  - chmod +x deploy.sh
 deploy:
   - provider: script
     script: rvm $TRAVIS_RUBY_VERSION do ./deploy.sh production
