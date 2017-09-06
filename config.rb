@@ -34,6 +34,7 @@ configure :development do
 end
 
 configure :build do
+  activate :dato
   activate :asset_hash
   activate :gzip
   # activate :imageoptim # doesn't support MM4 https://github.com/plasticine/middleman-imageoptim/issues/46
