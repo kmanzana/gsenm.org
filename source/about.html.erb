@@ -44,14 +44,14 @@ title: About | Grand Staircase Escalante Partners
             <div class="mkd-title-subtitle-holder" style="">
               <div class="mkd-title-subtitle-holder-inner">
                 <h1 style="color:#ffffff;">
-                  <span class="gs-slider-lyr1">About US</span>
+                  <span class="gs-slider-lyr1"><%= dato.about_page.title %></span>
                 </h1>
                 <div class="mkd-separator-holder clearfix  mkd-separator-center">
                   <div class="mkd-separator" style="border-color: #F0691B;width: 61px;border-bottom-width: 2px;margin-top: 6px;margin-bottom: 18px">
                   </div>
                 </div>
                 <span class="mkd-subtitle" style="color:#ffffff;">
-                  <span class="gs-slider-lyr3">Our mission and our monument</span>
+                  <span class="gs-slider-lyr3"><%= dato.about_page.subtitle %></span>
                 </span>
               </div>
             </div>
@@ -79,15 +79,15 @@ title: About | Grand Staircase Escalante Partners
                                   </div>
                                   <div class="wpb_text_column wpb_content_element " >
                                     <div class="wpb_wrapper">
-                                      <h3 class="gs-title-text" style="text-align: left;">About the Monument</h3>
+                                      <h3 class="gs-title-text" style="text-align: left;"><%= dato.about_page.about_content_block_header %></h3>
                                     </div>
                                   </div>
                                   <div data-original-height="4" class="vc_empty_space"  style="height: 4px" >
                                     <span class="vc_empty_space_inner"></span>
                                   </div>
                                   <div class="wpb_text_column wpb_content_element " >
-                                    <div class="wpb_wrapper">
-                                      <p class="gs-text" style="text-align: left;">Grand Staircase-Escalante National Monument’s vast and austere landscape embraces a spectacular array of scientific and historic resources. This is a high, rugged and remote region, where bold plateaus and multi-hued cliffs run for distances, defying human perspective. It was the last place in the continental United States to be mapped. These strikingly beautiful and scientifically important lands are divided into three distinct regions: the Grand Staircase, the Kaiparowits Plateau and the Canyons of the Escalante. Grand Staircase-Escalante National Monument encompasses 1.9 million acres of southern Utah canyons, cliffs and plateaus.</p>
+                                    <div class="text-left">
+                                      <%= markdown dato.about_page.about_content_block_body %>
                                     </div>
                                   </div>
                                   <div data-original-height="20" class="vc_empty_space"  style="height: 20" >

@@ -200,3 +200,8 @@ $text-font-stack: 'Muli', sans-serif;
   color: white;
   font-family: $text-font-stack;
 }
+
+// utility styles
+.text-left {
+  text-align: left;
+}

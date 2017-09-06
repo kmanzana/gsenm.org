@@ -29,7 +29,7 @@ activate :autoprefixer do |prefix|
 end
 
 configure :development do
-  # activate :dato, live_reload: true
+  activate :dato, live_reload: true
   activate :livereload
 end
 

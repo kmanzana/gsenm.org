@@ -11,6 +11,7 @@ gem 'middleman-livereload' # KM 8/26/17: can't be put in a group or it breaks
 gem 'middleman-minify-html'
 gem 'middleman-s3_sync'
 gem 'mime-types'
+gem 'rake'
 
 group :development do
   gem 'travis'
