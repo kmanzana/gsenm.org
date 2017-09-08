@@ -43,21 +43,21 @@ configure :build do
   activate :minify_javascript
 end
 
-# configure :staging do
-#   activate :s3_sync do |s3_sync|
-#     s3_sync.bucket                     = 'gsenmpartners'
-#     s3_sync.region                     = 'us-west-2'
-#     s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
-#     s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
-#     s3_sync.prefix                     = ''
-#     s3_sync.index_document             = 'index.html'
-#     s3_sync.error_document             = '404.html'
-#     s3_sync.prefer_gzip                = true
-#   end
+configure :staging do
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket                     = 'staging.gsenm.org'
+    s3_sync.region                     = 'us-west-2'
+    s3_sync.aws_access_key_id          = ENV['AWS_ACCESS_KEY_ID']
+    s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_ACCESS_KEY']
+    # s3_sync.prefix                     = ''
+    s3_sync.index_document             = 'index.html'
+    # s3_sync.error_document             = '404.html'
+    # s3_sync.prefer_gzip                = true
+  end
 
-#   caching_policy 'text/html', max_age: 0, must_revalidate: true
-#   default_caching_policy max_age:(60 * 60 * 24 * 365)
-# end
+  caching_policy 'text/html', max_age: 0, must_revalidate: true
+  default_caching_policy max_age:(60 * 60 * 24 * 365)
+end
 
 configure :production do
   activate :s3_sync do |s3_sync|
