@@ -116,10 +116,10 @@ title: About | Grand Staircase Escalante Partners
                                         <span class="vc_empty_space_inner"></span>
                                       </div>
                                       <div class="mkd-iwt-title-holder">
-                                        <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 25">Scientific</h5>
+                                        <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 25"><%= dato.about_page.about_content_description_title_top %></h5>
                                       </div>
                                     <div class="mkd-iwt-text-holder">
-                                      <p class="gs-text">Even today, this unspoiled natural area remains a frontier, a quality that greatly enhances Grand Staircase’s value for scientific study and presents exemplary opportunities for geologists, paleontologists, archaeologists, historians, and biologists.</p>
+                                      <p class="gs-text"><%= markdown dato.about_page.about_content_description_top %></p>
                                     </div>
                                   </div>
                                 </div>
@@ -129,10 +129,10 @@ title: About | Grand Staircase Escalante Partners
                                 <div class="mkd-iwt clearfix mkd-iwt-icon-left mkd-iwt-icon-medium" >
                                   <div class="mkd-iwt-content-holder" style="padding: 0 0 0 85px">
                                     <div class="mkd-iwt-title-holder">
-                                      <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 0px"      >Historic</h5>
+                                      <h5 class="mkd-iwt-title gs-title-text" style="font-weight: 800;letter-spacing: 0px"      ><%= dato.about_page.about_content_description_title_bot %></h5>
                                     </div>
-                                    <div class="mkd-iwt-text-holder">
-                                      <p class="gs-text" style="padding-bottom: 20px">These nearly 2 million acres were designated a national monument on Sept. 18, 1996. Grand Staircase is administered by the Bureau of Land Management (BLM), and in 2000, became the first unit of BLM’s National Landscape Conservation System. </p>
+                                    <div class="mkd-iwt-text-holder gs-text" style="padding-bottom: 20px">
+                                      <%= markdown dato.about_page.about_content_description_bot %>
                                     </div>
                                   </div>
                                 </div>
@@ -173,7 +173,7 @@ title: About | Grand Staircase Escalante Partners
                               <div class="wpb_text_column wpb_content_element " >
                                 <div class="wpb_wrapper">
                                   <h3 style="text-align: left;">
-                                    <span class="gs-title-text">Our Job</span>
+                                    <span class="gs-title-text"><%= dato.about_page.friends_job_title %></span>
                                   </h3>
                                 </div>
                               </div>
@@ -181,7 +181,7 @@ title: About | Grand Staircase Escalante Partners
                                 <span class="vc_empty_space_inner"></span>
                               </div>
                               <div class="mkd-section-subtitle-holder mkd-section-subtitle-left" >
-                                <p style="text-align: left" class="mkd-section-subtitle gs-subhdr-text">We are the official "friends" organization for Grand Staircase-Escalante National Monument</p>
+                                <p style="text-align: left" class="mkd-section-subtitle gs-subhdr-text"><%= dato.about_page.friends_job_subtitle %></p>
                               </div>
                               <div data-original-height="15" class="vc_empty_space"  style="height: 15px" >
                                 <span class="vc_empty_space_inner"></span>
