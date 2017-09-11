@@ -1,20 +1,10 @@
 require 'dotenv/load'
+activate :dato, live_reload: true
 
 # Per-page layout changes
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
-
-# Proxy pages
-# KM 8/26/17: due to how middleman 4 collections work (http://bit.ly/2jHZTI9),
-# always use `dato` inside a `.tap` method block
-dato.tap do |dato|
-  dato.programs.each do |program|
-    proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
-      program: program
-    }, ignore: true
-  end
-end
 
 # Helpers
 helpers do
@@ -29,12 +19,10 @@ activate :autoprefixer do |prefix|
 end
 
 configure :development do
-  activate :dato, live_reload: true
   activate :livereload
 end
 
 configure :build do
-  activate :dato
   activate :asset_hash
   activate :gzip
   # activate :imageoptim # doesn't support MM4 https://github.com/plasticine/middleman-imageoptim/issues/46
@@ -42,6 +30,18 @@ configure :build do
   activate :minify_html
   activate :minify_javascript
 end
+
+# Proxy pages
+# KM 8/26/17: due to how middleman 4 collections work (http://bit.ly/2jHZTI9),
+# always use `dato` inside a `.tap` method block
+dato.tap do |dato|
+  dato.programs.each do |program|
+    proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
+      program: program
+    }, ignore: true
+  end
+end
+
 
 configure :staging do
   activate :s3_sync do |s3_sync|
