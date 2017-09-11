@@ -8,13 +8,13 @@ page '/*.txt', layout: false
 # Proxy pages
 # KM 8/26/17: due to how middleman 4 collections work (http://bit.ly/2jHZTI9),
 # always use `dato` inside a `.tap` method block
-# dato.tap do |dato|
-#   dato.programs.each do |program|
-#     proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
-#       program: program
-#     }, ignore: true
-#   end
-# end
+dato.tap do |dato|
+  dato.programs.each do |program|
+    proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
+      program: program
+    }, ignore: true
+  end
+end
 
 # Helpers
 helpers do
