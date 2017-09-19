@@ -1,5 +1,5 @@
 
-<% current_page.data.title = "#{program.name} | Grand Staircase Escalante Partners" %>
+<% current_page.data.title = "#{program.title} | Grand Staircase Escalante Partners" %>
 
 
 <div class="mkd-content" >
@@ -128,7 +128,7 @@
             </div>
             <div class="mkd-single-nav-content-holder">
               <h6 class="gs-text">
-                <a href="/programs/#{program.last_page}.html"><%= markdown program.last_page %></a>
+                <%= link_to markdown(program.last_page), "/programs/#{program.last_page}.html" %>
               </h6>
             </div>
           </div>

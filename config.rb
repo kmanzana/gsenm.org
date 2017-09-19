@@ -9,6 +9,7 @@ page '/*.txt', layout: false
 # Helpers
 helpers do
   def markdown(source)
+    return '' unless source
     Tilt[:markdown].new { source }.render(self)
   end
 end
