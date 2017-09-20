@@ -1,6 +1,7 @@
 
 <% current_page.data.title = "#{program.title} | Grand Staircase Escalante Partners" %>
 
+<%= partial "top" %>
 
 <div class="mkd-content" >
   <div class="mkd-content-inner">
@@ -14,7 +15,7 @@
                   <% program.gallery.each do |photo| %>
                     <div class="mkd-portfolio-single-media">
                       <%= image_tag photo.url(w: 660, h: 350, fit: :crop), alt: photo.alt, class: 'hidden-xs' %>
-                      <%= image_tag photo.url(w: 400, h: 350, fit: :crop), alt: photo.alt, class: 'visible-xs' %>
+                      <!--<%= image_tag photo.url(w: 400, h: 350, fit: :crop), alt: photo.alt, class: 'visible-xs' %>-->
                     </div>
                   <% end %>
                 </div>
@@ -117,7 +118,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!--
       <div class="mkd-portfolio-single-nav">
         <div class="mkd-container-inner clearfix">
           <div class="mkd-portfolio-prev mkd-single-nav-with-image">
@@ -148,7 +149,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div> <!-- close div.content_inner -->
 </div>  <!-- close div.content -->

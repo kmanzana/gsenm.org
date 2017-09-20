@@ -28,17 +28,15 @@ title: Programs | Grand Staircase Escalante Partners
 															<div class="mkd-portfolio-standard-item">
 																<div class="mkd-ptf-wrapper">
 																	<div class="mkd-ptf-item-image-holder">
-																		<img width="900" height="606" src="<%= program.main_image %>" class="attachment-full size-full wp-post-image credit" alt="f" srcset="<%= program.main_image %> 900w, <%= program.main_image %> 300w, <%= program.main_image %> 768w" sizes="(max-width: 900px) 100vw, 900px" />
+																		<img width="900" height="606" src="<%= program.main_image.url %>" class="attachment-full size-full wp-post-image credit" alt="f" srcset="<%= program.main_image.url %> 900w, <%= program.main_image.url %> 300w, <%= program.main_image.url %> 768w" sizes="(max-width: 900px) 100vw, 900px" />
 																		<div class="mkd-portfolio-standard-overlay" style="background-color: ">
-																			<a class="lightbox mkd-portfolio-lightbox" href="/programs/#{program.slug}.html"><!-- data-rel="prettyPhoto[portfolio_standard_pretty_photo]">-->
+																			<a class="lightbox mkd-portfolio-lightbox" href="/programs/<%= program.slug %>.html"><!-- data-rel="prettyPhoto[portfolio_standard_pretty_photo]">-->
 																			</a>
 																		</div>
 																	</div>
 																	<div class="mkd-ptf-item-text-holder" style="text-align: center">
 																		<h5 class="mkd-ptf-item-title gs-title-text">
-																			<a href="/programs/#{program.slug}.html" >
-																				<%= program.title %>
-																			</a>
+																			<%= link_to program.title, "/program/#{program.slug}.html" %>
 																		</h5>
 																		<p class="mkd-ptf-item-excerpt gs-text"><%= program.subtitle %></p>
 																	</div>
