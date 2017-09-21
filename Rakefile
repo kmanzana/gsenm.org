@@ -6,15 +6,14 @@ task :deploy do
   end
 
   branch = `echo $TRAVIS_BRANCH`.chomp
-
   puts "current branch: #{branch}"
 
   case branch
   when 'staging'
-    puts 'running deploy to staging env'
+    puts 'running deploy to env: staging'
     system deploy_command('staging')
   when 'master'
-    puts 'running deploy to production env'
+    puts 'running deploy to env: production'
     system deploy_command('production')
   else
     puts 'not running deploy'

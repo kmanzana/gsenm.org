@@ -8,7 +8,7 @@ rvm:
   - 2.4.1
 cache: bundler
 git:
-  depth: 1
+  depth: 1 # KM 9/21/17: only clone the last commit from GitHub to help speed up build
 branches:
   only:
   - master
