@@ -50,38 +50,48 @@
                     </div>
                   </div>
                   <div class="mkd-portfolio-fields">
-                    <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
-                      <h6 class="gs-text" style="color: black">Partners</h6>
-                      <p class="gs-text"><%= program.partners %></p>
-                    </div>
-                    <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
-                      <h6 class="gs-text" style="color: black">Services</h6>
-                      <p class="gs-text"><%= program.services %></p>
-                    </div>
-                    <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
-                      <h6 class="gs-text" style="color: black">Link</h6>
-                      <p class="gs-text">
-                        <a href="http://escalanteriverwatershedpartnership.org/" target="_blank"><span class="gs-link"><%= markdown program.link %></span>                 </a>
-                      </p>
-                    </div>
-                    <div class="mkd-portfolio-info-item mkd-portfolio-date clearfix">
-                      <h6 class="gs-text" style="color: black">Volunteer</h6>
-                      <p class="gs-text"><%= program.volunteer %></p>
-                    </div>
-                    <div class="mkd-portfolio-item-social">
-                      <div class="mkd-portfolio-single-share-holder">
-                        <span class="mkd-share-label gs-text">
-                          Follow          </span>
+                    <% unless program.partners.blank? %>
+                      <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
+                        <h6 class="gs-text" style="color: black">Partners</h6>
+                        <p class="gs-text"><%= program.partners %></p>
+                      </div>
+                    <% end %>
+                    <% unless program.partners.blank? %>
+                      <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
+                        <h6 class="gs-text" style="color: black">Services</h6>
+                        <p class="gs-text"><%= program.services %></p>
+                      </div>
+                    <% end %>
+                    <% unless program.link.blank? %>
+                      <div class="mkd-portfolio-info-item mkd-portfolio-custom-field clearfix">
+                        <h6 class="gs-text" style="color: black">Link</h6>
+                        <p class="gs-text">
+                          <a href="http://escalanteriverwatershedpartnership.org/" target="_blank"><span class="gs-link"><%= markdown program.link %></span>                 </a>
+                        </p>
+                      </div>
+                    <% end %>
+                    <% unless program.volunteer.blank? %>
+                      <div class="mkd-portfolio-info-item mkd-portfolio-date clearfix">
+                        <h6 class="gs-text" style="color: black">Volunteer</h6>
+                        <p class="gs-text"><%= markdown program.volunteer %></p>
+                      </div>
+                    <% end %>
+                    <% unless program.facebook.blank? %>
+                      <div class="mkd-portfolio-item-social">
+                        <div class="mkd-portfolio-single-share-holder">
+                          <span class="mkd-share-label gs-text">Follow</span>
                           <div class="mkd-social-share-holder mkd-list">
-                            <span class="mkd-social-share-label gs-text">Follow</span>
                             <ul>
-                            <li class="mkd-facebook-share ">
-                              <%= markdown program.facebook %>
-                            </li>
-                          </ul>
+                              <li class="mkd-facebook-share">
+                                <% link_to program.facebook, class: 'mkd-share-link', target: :_blank do %>
+                                  <span class="mkd-social-network-icon fa fa-facebook"></span>
+                                <% end %>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <% end %>
                   </div>
                   <div class="mkd-separator gs-separator">
                   </div>
