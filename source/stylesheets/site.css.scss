@@ -117,7 +117,9 @@ $text-font-stack: 'Muli', sans-serif;
 }
 
 .gs-logo {
-  height: 70px
+  height: 70px;
+  border-style: solid;
+  border-color: white;
 }
 
 .gs-button {
