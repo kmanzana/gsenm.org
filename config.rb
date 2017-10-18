@@ -1,4 +1,7 @@
 require 'dotenv/load'
+
+set :url_root, 'http://gsenm.org'
+activate :search_engine_sitemap
 activate :dato, live_reload: true
 
 # Per-page layout changes

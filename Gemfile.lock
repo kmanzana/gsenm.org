@@ -171,6 +171,9 @@ GEM
       parallel
       ruby-progressbar
       unf
+    middleman-search_engine_sitemap (1.4.0)
+      builder
+      middleman-core (~> 4.0)
     mime-types (2.99.3)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
@@ -259,6 +262,7 @@ DEPENDENCIES
   middleman-minify-html
   middleman-pry
   middleman-s3_sync
+  middleman-search_engine_sitemap
   mime-types
   rake
   travis

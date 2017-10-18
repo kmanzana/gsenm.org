@@ -10,6 +10,7 @@ gem 'middleman-livereload' # KM 8/26/17: can't be put in a group or it breaks
 gem 'middleman-minify-html'
 gem 'middleman-pry' # KM 4/14/17: can't be put in a group or it breaks
 gem 'middleman-s3_sync'
+gem 'middleman-search_engine_sitemap'
 gem 'mime-types'
 gem 'rake'
 
