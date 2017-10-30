@@ -7,27 +7,25 @@ title: Grand Staircase Escalante Partners
 
 <body class="home page-template page-template-full-width page-template-full-width-php page page-id-5 mkd-core-1.1.2 ecologist-ver-1.0  mkd-grid-1300 mkd-blog-installed mkd-boxed-widgets mkd-header-standard mkd-sticky-header-on-scroll-up mkd-default-mobile-header mkd-sticky-up-mobile-header mkd-dropdown-default mkd-light-header mkd-full-width-wide-menu mkd-header-standard-shadow-disable mkd-header-standard-in-grid-shadow-disable mkd-top-bar-light mkd-fullscreen-search mkd-fullscreen-search-with-bg-image mkd-search-fade mkd-side-menu-slide-with-content mkd-width-470 mkd-woocommerce-columns-4 mkd-woo-single-has-pretty-photo wpb-js-composer js-comp-ver-5.1.1 vc_responsive" itemscope itemtype="http://schema.org/WebPage">
 
-<%= partial "sidebar" %>
-
-<div class="mkd-wrapper">
-  <div class="mkd-wrapper-inner">
-    <div class="mkd-fullscreen-search-holder">
-      <div class="mkd-fullscreen-search-table">
-        <div class="mkd-fullscreen-search-cell">
-          <div class="mkd-fullscreen-search-inner">
-            <form action="http://ecologist.mikado-themes.com/" class="mkd-fullscreen-search-form" method="get">
-              <div class="mkd-field-holder">
-                <input type="text" name="s" placeholder="search" class="mkd-search-field" autocomplete="off"/>
-                <div class="mkd-line"></div>
-                <input type="submit" class="mkd-search-submit" value="&#xf21f;"/>
+<% unless dato.home_page.banner.blank? %>
+  <div class="mkd-top-bar">
+    <div class="mkd-grid">
+      <div class="mkd-vertical-align-containers mkd-30-30-30">
+        <div class="mkd-position-center mkd-top-bar-widget-area">
+          <div class="mkd-position-center-inner mkd-top-bar-widget-area-inner">
+            <div class="widget widget_text mkd-top-bar-widget">
+              <div class="mkd-top-bar-widget-inner">
+                <div class="textwidget">
+                  <%= markdown dato.home_page.banner %>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <%= partial "home_header" %>
 
@@ -356,14 +354,14 @@ title: Grand Staircase Escalante Partners
                           <div class="wpb_wrapper">
                             <div class="wpb_text_column wpb_content_element " >
                               <div class="wpb_wrapper">
-                                <h2>read our latest news</h2>
+                                <h2><%= dato.home_page.news_section_title %></h2>
                               </div>
                             </div>
                             <div class="mkd-separator-holder clearfix  mkd-separator-center">
                               <div class="mkd-separator" style="border-color: #f0691b; border-style: solid;width: 61px;border-bottom-width: 2px;margin-top: 14px;margin-bottom: 18px"></div>
                             </div>
                             <div class="mkd-section-subtitle-holder" >
-                              <p class="mkd-section-subtitle">latest happenings on the monument and with the organization</p>
+                              <p class="mkd-section-subtitle"><%= dato.home_page.news_section_subtitle %></p>
                             </div>
                             <div data-original-height="50" class="vc_empty_space"  style="height: 50px" >
                               <span class="vc_empty_space_inner"></span>
