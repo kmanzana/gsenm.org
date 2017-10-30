@@ -54,6 +54,28 @@
                           <% elsif video.provider == 'vimeo' %>
                             <iframe src="https://player.vimeo.com/video/<%= video.provider_uid %>" width="825" height="464" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                           <% end %>
+                        <% when 'document' %>
+                          <div class="mkd-call-to-action normal">
+                            <div class="mkd-call-to-action-row-75-25 clearfix" style="padding: 18px 38px 18px 38px;;background-color: #f4f5f6;">
+                              <div class="mkd-text-wrapper mkd-call-to-action-column1 mkd-call-to-action-cell">
+                                <div class="mkd-call-to-action-text">
+                                  <h5>
+                                    <span style="color: #313646;">
+                                      <%= content_section.description %>
+                                    </span>
+                                  </h5>
+                                </div>
+                              </div>
+                              <div class="mkd-button-wrapper mkd-call-to-action-column2 mkd-call-to-action-cell" style="text-align: right ;">
+                                <a class="mkd-btn mkd-btn-solid mkd-btn-medium mkd-btn-custom-hover-bg mkd-btn-custom-border-hover mkd-btn-hover-solid" data-hover-bg-color="#54ddd1" data-hover-border-color="#54ddd1" style="background-color: #313646;border-color: #313646"
+                                   href='<%= content_section.document.url %>' target='_blank'>
+                                  <span class="mkd-btn-text"><%= content_section.button || 'view' %></span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        <% else %>
+                          <p>No support for <%= content_section.item_type.name %> content block.</p>
                         <% end %>
                         <div data-original-height="20" class="vc_empty_space" style="height: 20px">
                           <span class="vc_empty_space_inner"></span>
