@@ -152,6 +152,11 @@ GEM
       dato (>= 0.3.2)
       dotenv
       middleman-core (>= 4.1.10)
+    middleman-google-analytics (3.0.0)
+      activesupport (>= 4.1, < 5.1)
+      erubis
+      middleman-core (>= 3.4)
+      uglifier (>= 2.5, < 4.0)
     middleman-livereload (3.4.6)
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
@@ -258,6 +263,7 @@ DEPENDENCIES
   middleman
   middleman-autoprefixer
   middleman-dato
+  middleman-google-analytics
   middleman-livereload
   middleman-minify-html
   middleman-pry

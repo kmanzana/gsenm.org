@@ -6,6 +6,7 @@ gem 'font-awesome-sass'
 gem 'middleman'
 gem 'middleman-autoprefixer'
 gem 'middleman-dato'
+gem 'middleman-google-analytics'
 gem 'middleman-livereload' # KM 8/26/17: can't be put in a group or it breaks
 gem 'middleman-minify-html'
 gem 'middleman-pry' # KM 4/14/17: can't be put in a group or it breaks
