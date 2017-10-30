@@ -1,0 +1,103 @@
+---
+title: News | Grand Staircase Escalante Partners
+---
+
+<%= partial "top" %>
+
+<div class="vc_row wpb_row vc_row-fluid mkd-section mkd-content-aligment-center mkd-grid-section" style="">
+  <div class="clearfix mkd-section-inner">
+    <div class="mkd-section-inner-margin clearfix">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner ">
+          <div class="wpb_wrapper">
+            <div data-original-height="50" class="vc_empty_space"  style="height: 50px" >
+              <span class="vc_empty_space_inner"></span>
+            </div>
+            <div class="wpb_text_column wpb_content_element " >
+              <div class="wpb_wrapper">
+                <h2>News</h2>
+              </div>
+            </div>
+            <div class="mkd-separator-holder clearfix  mkd-separator-center">
+              <div class="mkd-separator" style="border-color: #f0691b; border-style: solid;width: 61px;border-bottom-width: 2px;margin-top: 14px;margin-bottom: 18px"></div>
+            </div>
+            <div class="mkd-section-subtitle-holder" >
+              <p class="mkd-section-subtitle">what's happnin in the monument</p>
+            </div>
+            <div data-original-height="50" class="vc_empty_space"  style="height: 50px" >
+              <span class="vc_empty_space_inner"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mkd-content" >
+<div class="mkd-content-inner">
+<div class="mkd-container">
+<div class="mkd-container-inner clearfix">
+<div class="mkd-page-content-holder mkd-grid-col-12">
+<div class="vc_row wpb_row vc_row-fluid mkd-section vc_custom_1495202182248 mkd-content-aligment-left" style="">
+<div class="clearfix mkd-full-section-inner">
+<div class="wpb_column vc_column_container vc_col-sm-12">
+<div class="vc_column-inner">
+<div class="wpb_wrapper">
+<div class="mkd-elements-holder mkd-responsive-mode-768">
+<div class="mkd-elements-holder-item mkd-width-1-1 mkd-vertical-alignment-middle mkd-horizontal-alignment-left" data-1024-1280="0px 9px 0px 0px" data-1280-1440="0px 9px 0px 0px" data-480="0px 0px 0px 0px" data-480-600="0px 0px 0px 0px" data-600-768="0px 0px 0px 0px" data-768-1024="0px 0px 0px 0px" data-item-class="mkd-elements-holder-custom-639401">
+  <div class="mkd-elements-holder-item-inner">
+    <div class="mkd-elements-holder-item-content mkd-elements-holder-custom-639401" style="padding: 0px 9px 0px 0px">
+      <div class="mkd-elements-holder-item-content-inner">
+        <div class="mkd-blog-list-holder mkd-masonry mkd-three" style="visibility: visible; position: relative; height: 2013.56px;">
+          <div class="mkd-blog-masonry-grid-sizer"></div>
+          <div class="mkd-blog-masonry-grid-gutter"></div>
+          <% dato.news_posts.each do |news_post| %>
+            <article class="post-13176 post type-post status-publish format-standard has-post-thumbnail hentry category-nature tag-animals tag-forest tag-ocean" id="post-13176" style="position: absolute; left: 0px; top: 0px;">
+              <div class="mkd-post-content">
+                <div class="mkd-post-image">
+                  <a href="<%= "/news/#{news_post.slug}.html" %>">
+                    <img alt="a" class="attachment-full size-full wp-post-image" height="840" sizes="(max-width: 1300px) 100vw, 1300px" src="<%= news_post.main_image.url %>" srcset="<%= news_post.main_image.url %>" width="1300">
+                  </a>
+                </div>
+                <div class="mkd-post-text">
+                  <div class="mkd-post-text-inner">
+                    <h3 class="mkd-post-title">
+                      <a href="<%= "/news/#{news_post.slug}.html" %>"><%= news_post.title %></a>
+                    </h3>
+                    <p class="mkd-post-excerpt"><%= preview(news_post.content) %></p>
+                    <div class="mkd-post-read-more-button">
+                      <a class="mkd-btn mkd-btn-simple mkd-blog-list-button mkd-btn-hover-" href="<%= "/news/#{news_post.slug}.html" %>" target="_self"><span class="mkd-btn-text">read more</span></a>
+                    </div>
+                  </div>
+                  <div class="mkd-post-info">
+                    <div class="mkd-post-info-date">
+                      <!-- <span class="mkd-post-info-date-icon">
+                        <i class="mkd-icon-simple-line-icon icon-calendar"></i>
+                      </span> -->
+                      <span class="mkd-date"><%= format(news_post.date) %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mkd-elements-holder-item-bgrnd"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<%= partial "bottom" %>

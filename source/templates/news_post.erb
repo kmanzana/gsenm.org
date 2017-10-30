@@ -1,0 +1,175 @@
+<% current_page.data.title = "#{news_post.title} | Grand Staircase Escalante Partners" %>
+
+<%= partial "top" %>
+
+<div class="mkd-content" >
+<div class="mkd-content-inner">
+<div class="mkd-container">
+<div class="mkd-container-inner clearfix">
+<div class="mkd-page-content-holder mkd-grid-col-12">
+  <div class="mkd-blog-holder mkd-blog-single mkd-blog-standard">
+    <article id="post-12726" class="post-12726 post type-post status-publish format-standard has-post-thumbnail hentry category-trevel tag-animals tag-forest tag-ocean">
+      <div class="mkd-post-content">
+        <div class="mkd-post-image">
+          <img width="1300" height="671" src="<%= news_post.main_image.url %>" class="attachment-full size-full wp-post-image" alt="a" srcset="<%= news_post.main_image.url %>" sizes="(max-width: 1300px) 100vw, 1300px"> </div>
+        <div class="mkd-post-text">
+          <div class="mkd-post-text-inner clearfix">
+            <h1 class="mkd-post-title"><%= news_post.title %></h1>
+            <div class="mkd-post-info">
+              <div class="mkd-post-info-date">
+                <span class="mkd-date"><%= format(news_post.date) %></span>
+              </div>
+            </div>
+            <div class="vc_row wpb_row vc_row-fluid mkd-section mkd-content-aligment-left" style="">
+              <div class="clearfix mkd-full-section-inner">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                  <div class="vc_column-inner ">
+                    <div class="wpb_wrapper">
+                      <% news_post.content.each do |content_section| %>
+                        <% case content_section.item_type.name %>
+                        <% when 'header' %>
+                          <div class="mkd-custom-font-holder" style="font-family: Merriweather;font-size: 40px;line-height: 50px;font-weight: 800;text-transform: Lowercase;color: #313646" data-font-size="40px" data-line-height="50">
+                            <%= content_section.header %>
+                          </div>
+                        <% when 'text' %>
+                          <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                              <%= markdown content_section.text %>
+                            </div>
+                          </div>
+                          <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                            <span class="vc_empty_space_inner"></span></div>
+                        <% when 'image' %>
+                          <div class="wpb_single_image wpb_content_element">
+                            <figure class="wpb_wrapper vc_figure">
+                              <div class="vc_single_image-wrapper vc_box_border_grey">
+                                <img class="vc_single_image-img" src="<%= content_section.image.url %>" alt="a" title="blog-post-43">
+                              </div>
+                            </figure>
+                          </div>
+                        <% when 'video' %>
+                          <% video = content_section.video %>
+                          <% if video.provider == 'youtube' %>
+                            <iframe src="https://www.youtube.com/embed/<%= video.provider_uid %>?rel=0" width="825" height="464" frameborder="0" allowfullscreen></iframe>
+                          <% elsif video.provider == 'vimeo' %>
+                            <iframe src="https://player.vimeo.com/video/<%= video.provider_uid %>" width="825" height="464" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          <% end %>
+                        <% when 'document' %>
+                          <div class="mkd-call-to-action normal">
+                            <div class="mkd-call-to-action-row-75-25 clearfix" style="padding: 18px 38px 18px 38px;;background-color: #f4f5f6;">
+                              <div class="mkd-text-wrapper mkd-call-to-action-column1 mkd-call-to-action-cell">
+                                <div class="mkd-call-to-action-text">
+                                  <h5>
+                                    <span style="color: #313646;">
+                                      <%= content_section.description %>
+                                    </span>
+                                  </h5>
+                                </div>
+                              </div>
+                              <div class="mkd-button-wrapper mkd-call-to-action-column2 mkd-call-to-action-cell" style="text-align: right ;">
+                                <a class="mkd-btn mkd-btn-solid mkd-btn-medium mkd-btn-custom-hover-bg mkd-btn-custom-border-hover mkd-btn-hover-solid" data-hover-bg-color="#54ddd1" data-hover-border-color="#54ddd1" style="background-color: #313646;border-color: #313646"
+                                   href='<%= content_section.document.url %>' target='_blank'>
+                                  <span class="mkd-btn-text"><%= content_section.button || 'view' %></span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        <% else %>
+                          <p>No support for <%= content_section.item_type.name %> content block.</p>
+                        <% end %>
+                        <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                          <span class="vc_empty_space_inner"></span>
+                        </div>
+                      <% end %>
+
+                      <!-- <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                          <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum lobortis euismod. Suspendisse non imperdiet mi, non iaculis odio. Cras vel posuere magna, mattis tempor ligula. Donec vestibulum erat et felis gravida egestas. Aliquam ut felis sed nibh congue feu in et lectus. Maecenas facilisis tellus at posuere rhoncus. Aliquam consequat tempus sapien, vitae suscipit orci euismod ac. Phase nec sollicitudin tortor. Sed ornare, lorem in commodo convallis, ligula odio euismod velit, tempus dictum ligula diam a mi. Praesent lacinia sit amet mi vel ullamcorper. Integer congue rutrum justo, at blandit tortor. Cras non pellentesque ante. Nullam consequat nec est sedac oulgpt.&nbsp;Morbi bibendum feugiat urna, quis ultricies risus luctus vel. Quisque sed massa gravida, iaculis ligula at, tristique leo. Maecenas lectus vitae tellus pharetra malesuada. Donec elit purus, pulvinar nec quam eget, lobortis vulputate turpis. Quisque feugiat tincidunt efficitur. Nullam vulputate nunc at pretium luctus.</p>
+                        </div>
+                      </div>
+                      <blockquote class="mkd-blockquote-shortcode" style="width: 92%">
+                        <h6 class="mkd-blockquote-text">
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique massa ut tortor sollicitudin auctor. Vestibulum non magna ligula. Pellentesque ac efficitur massa, in convallis sem. Etiam eros urna, venenatis vitae consectetur nec, ultrices feugiat risus. </span>
+                        </h6>
+                      </blockquote>
+                      <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                          <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum lobortis euismod. Suspendisse non imperdiet mi, non iaculis odio. Cras vel posuere magna, mattis tempor ligula. Donec vestibulum erat et felis gravida egestas. Aliquam ut felis sed nibh congue feu in et lectus. Maecenas facilisis tellus at posuere rhoncus. Aliquam consequat tempus sapien, vitae suscipit orci euismod ac. Phase nec sollicitudin tortor. Sed ornare, lorem in commodo convallis, ligula odio euismod velit, tempus dictum ligula diam a mi. Praesent lacinia sit amet mi vel ullamcorper. Integer congue rutrum justo, at blandit tortor. Cras non pellentesque ante. Nullam consequat nec est sedac oulgpt.&nbsp;Morbi bibendum feugiat urna, quis ultricies risus luctus vel. Quisque sed massa gravida, iaculis ligula at, tristique leo. Maecenas lectus vitae tellus pharetra malesuada. Donec elit purus, pulvinar nec quam eget, lobortis vulputate turpis. Quisque feugiat tincidunt efficitur. Nullam vulputate nunc at pretium luctus.</p>
+                        </div>
+                      </div>
+                      <div data-mkd-parallax-speed="1" class="vc_row wpb_row vc_inner vc_row-fluid mkd-section vc_custom_1495028667000 mkd-content-aligment-left" style="">
+                        <div class="mkd-full-section-inner">
+                          <div class="wpb_column vc_column_container vc_col-sm-4">
+                            <div class="vc_column-inner ">
+                              <div class="wpb_wrapper">
+                                <div class="wpb_single_image wpb_content_element vc_align_left">
+                                  <figure class="wpb_wrapper vc_figure">
+                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/blog-post-41-294x200.jpg" width="294" height="200" alt="a" title="blog-post-41"></div>
+                                  </figure>
+                                </div>
+                                <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                                  <span class="vc_empty_space_inner"></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wpb_column vc_column_container vc_col-sm-4">
+                            <div class="vc_column-inner ">
+                              <div class="wpb_wrapper">
+                                <div class="wpb_single_image wpb_content_element vc_align_left">
+                                  <figure class="wpb_wrapper vc_figure">
+                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/blog-post-42-294x200.jpg" width="294" height="200" alt="a" title="blog-post-42"></div>
+                                  </figure>
+                                </div>
+                                <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                                  <span class="vc_empty_space_inner"></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wpb_column vc_column_container vc_col-sm-4">
+                            <div class="vc_column-inner ">
+                              <div class="wpb_wrapper">
+                                <div class="wpb_single_image wpb_content_element vc_align_left">
+                                  <figure class="wpb_wrapper vc_figure">
+                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/blog-post-43-294x200.jpg" width="294" height="200" alt="a" title="blog-post-43"></div>
+                                  </figure>
+                                </div>
+                                <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                                  <span class="vc_empty_space_inner"></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mkd-custom-font-holder" style="font-family: Merriweather;font-size: 40px;line-height: 50px;font-weight: 800;text-transform: Lowercase;color: #313646" data-font-size="40px" data-line-height="50">
+                        because you need time for yourself.</div>
+                      <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                          <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum lobortis euismod. Aliquam consequat tempus sapien, vitae suscipit orci euismod ac lecus. Suspendisse non imperdiet mi, non iaculis odio. Cras vel posuere magna, mattis tempor ligula. Donec vestibulum erat et felis gravida egestas. Aliquam ut felis sed nibh congue feugiat in et lectus. Maecenas facilisis tellus at posuere rhoncus. Aliquam consequat tempus sapien, vitae suscipit orci euismod ac lecus. Phasellus nec sollicitudin tortor. Sed ornare, lorem in commodo convallis, ligula odio euismod velit, tempus dictum ligula diam a mi. Praesent lacinia sit amet mi vel ullamcorper. Integer congue rutrum.&nbsp;Aliquam consequat tempus sapien, vitae suscipit orci euismod ac lecus. Suspendisse non imperdiet mi, non iaculis odio. Cras vel posuere magna, mattis tempor ligula.</p>
+                        </div>
+                      </div>
+                      <div data-original-height="5" class="vc_empty_space" style="height: 5px">
+                        <span class="vc_empty_space_inner"></span></div>
+                      <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                          <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum lobortis euismod. Suspendisse non imperdiet mi, non iaculis odio. Cras vel posuere magna, mattis tempor ligula. Donec vestibulum erat et felis gravida egestas. Aliquam ut felis sed nibh congue feugiat in et lectus. Maecenas facilisis tellus at posuere rhoncus. Aliquam consequat tempus sapien, vitae suscipit orci euismod ac. Morbi bibendum feugiat urna, quis ultricies risus luctus vel. Quisque sed massa gravida, iaculis ligula at, tristique leo. Phasellus nec sollicitudin tortor. Sed ornare, lorem in commodo convallis, ligula odio euismod velit, tempus dictum ligula diam a mi. Praesent lacinia sit amet mi vel ullamcorper. Integer congue rutrum justo, at blandit tortor. Cras non pellentesque ante. Nullam consequat nec est sed pretium.</p>
+                        </div>
+                      </div>
+                      <div data-original-height="10" class="vc_empty_space" style="height: 10px">
+                        <span class="vc_empty_space_inner"></span></div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<%= partial "bottom" %>
