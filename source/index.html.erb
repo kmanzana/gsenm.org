@@ -30,6 +30,7 @@ title: Grand Staircase Escalante Partners
 </div>
 
 <%= partial "home_header" %>
+
 <!--
 <a id="mkd-back-to-top" href='#'>
   <span class="mkd-back-to-top-icon">
@@ -346,7 +347,7 @@ title: Grand Staircase Escalante Partners
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <div class="vc_row wpb_row vc_row-fluid mkd-section vc_custom_1495448652490 mkd-content-aligment-center mkd-grid-section" style="">
                   <div class="clearfix mkd-section-inner">
                     <div class="mkd-section-inner-margin clearfix">
@@ -359,10 +360,10 @@ title: Grand Staircase Escalante Partners
                               </div>
                             </div>
                             <div class="mkd-separator-holder clearfix  mkd-separator-center">
-                              <div class="mkd-separator" style="border-color: #54ddd1;border-style: solid;width: 61px;border-bottom-width: 2px;margin-top: 14px;margin-bottom: 18px"></div>
+                              <div class="mkd-separator" style="border-color: #f0691b; border-style: solid;width: 61px;border-bottom-width: 2px;margin-top: 14px;margin-bottom: 18px"></div>
                             </div>
                             <div class="mkd-section-subtitle-holder" >
-                              <p  class="mkd-section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                              <p class="mkd-section-subtitle">latest happenings on the monument and with the organization</p>
                             </div>
                             <div data-original-height="50" class="vc_empty_space"  style="height: 50px" >
                               <span class="vc_empty_space_inner"></span>
@@ -374,171 +375,39 @@ title: Grand Staircase Escalante Partners
                                     <div class="mkd-elements-holder-item-content-inner">
                                       <div class="mkd-give-forms-list mkd-columns-3">
                                         <div class="mkd-give-forms-list-inner">
-                                          <div class="mkd-give-form-item">
-                                            <div class="mkd-give-top-holder">
-                                              <div class="mkd-give-top-image">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-housing-project/"></a>
-                                                <img width="1300" height="938" src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-7.jpg" class="attachment-original size-original wp-post-image" alt="a" srcset="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-7.jpg 1300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-7-300x216.jpg 300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-7-768x554.jpg 768w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-7-1024x739.jpg 1024w" sizes="(max-width: 1300px) 100vw, 1300px" />
-                                              </div>
-                                              <div class="mkd-give-button-donations">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-housing-project/"   target="_self"  class="mkd-btn mkd-btn-solid mkd-btn-small mkd-btn-custom-hover-bg mkd-btn-custom-border-hover mkd-btn-custom-hover-color mkd-give-top-button mkd-btn-hover-solid" data-hover-bg-color="#ffffff" data-hover-color="#313646" data-hover-border-color="#ffffff" >
-                                                  <span class="mkd-btn-text">donate</span>
-                                                </a>
-                                                <div class="mkd-give-donations">
-                                                  <span class="mkd-give-donations-number">6</span>
-                                                  <span class="mkd-give-donations-label">donations</span>
+                                          <% dato.news_posts.each do |news_post| %>
+                                            <div class="mkd-give-form-item">
+                                              <div class="mkd-give-top-holder">
+                                                <div class="mkd-give-top-image">
+                                                  <a href="<%= "/news/#{news_post.slug}.html" %>"></a>
+                                                  <img width="1300" height="938" src="<%= news_post.main_image.url %>" class="attachment-original size-original wp-post-image" alt="a" srcset="<%= news_post.main_image.url(w: 397, h: 215, fit: :crop) %>" sizes="(max-width: 1300px) 100vw, 1300px" />
                                                 </div>
                                               </div>
+                                              <div class="mkd-gf-content-holder">
+                                                <h3 class="mkd-gf-title">
+                                                  <%= link_to "/news/#{news_post.slug}.html", news_post.title %>
+                                                </h3>
+                                                <div class="mkd-gf-content">
+                                                  <!-- could just get first header and txt -->
+                                                  <%= preview(news_post.content) %>
+                                                </div>
+                                                <div class="mkd-post-read-more-button">
+                                                  <a href="<%= "/news/#{news_post.slug}.html" %>" target="_self" class="mkd-btn mkd-btn-simple mkd-blog-list-button mkd-btn-hover-">
+                                                    <span class="mkd-btn-text">read more</span>
+                                                  </a>
+                                                </div>
+                                                <div class="mkd-post-info">
+                                                  <div class="mkd-post-info-date">
+                                                    <!-- <span class="mkd-post-info-date-icon">
+                                                      <i class="mkd-icon-simple-line-icon icon-calendar"></i>
+                                                    </span> -->
+                                                    <span class="mkd-date"><%= format(news_post.date) %></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+
                                             </div>
-                                            <div class="mkd-gf-content-holder">
-                                              <h6 class="mkd-gf-cats">
-                                                <a href="http://ecologist.mikado-themes.com/donations/category/environment/" target="_blank">environment</a>
-                                              </h6>
-                                              <h3 class="mkd-gf-title">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-housing-project/">
-                                                  eco housing
-                                                  </br>project
-                                                </a>
-                                              </h3>
-                                              <div class="mkd-gf-content">
-                                                <p>Ius te decore vituperatoribus, eos viris conclusionem que in, est tritani praesent ne. No his erat ubique eruditi.</p>
-                                              </div>
-                                              <div class="mkd-give-progress give-goal-progress">
-                                                <div class="mkd-progress-bar">
-                                                  <div class="mkd-progress-title-holder clearfix">
-                                                    <div class="mkd-progress-number-wrapper  ">
-                                                      <h5 class="mkd-progress-number">
-                                                        <span class="mkd-percent" >0</span>
-                                                      </h5>
-                                                    </div>
-                                                  </div>
-                                                  <div class="mkd-progress-content-outer" >
-                                                    <div data-percentage=71.3 class="mkd-progress-content " ></div>
-                                                  </div>
-                                                </div>
-                                                <div class="mkd-give-progress-btm">
-                                                  <div class="mkd-give-progress-raised">
-                                                    <h6 class="mkd-give-progress-title">Raised: </h6>
-                                                    <span class="mkd-give-progress-amount">$2,852.00</span>
-                                                  </div>
-                                                  <div class="mkd-give-progress-goal">
-                                                    <h6 class="mkd-give-progress-title">Goal: </h6>
-                                                    <span class="mkd-give-progress-amount">$4000.00</span>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="mkd-give-form-item">
-                                            <div class="mkd-give-top-holder">
-                                              <div class="mkd-give-top-image">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-friendly-campaign/"></a>
-                                                <img width="1300" height="938" src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-9.jpg" class="attachment-original size-original wp-post-image" alt="a" srcset="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-9.jpg 1300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-9-300x216.jpg 300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-9-768x554.jpg 768w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-9-1024x739.jpg 1024w" sizes="(max-width: 1300px) 100vw, 1300px" />
-                                              </div>
-                                              <div class="mkd-give-button-donations">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-friendly-campaign/"   target="_self"  class="mkd-btn mkd-btn-solid mkd-btn-small mkd-btn-custom-hover-bg mkd-btn-custom-border-hover mkd-btn-custom-hover-color mkd-give-top-button mkd-btn-hover-solid" data-hover-bg-color="#ffffff" data-hover-color="#313646" data-hover-border-color="#ffffff" >
-                                                  <span class="mkd-btn-text">donate</span>
-                                                </a>
-                                                <div class="mkd-give-donations">
-                                                  <span class="mkd-give-donations-number">5</span>
-                                                  <span class="mkd-give-donations-label">donations                    </span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="mkd-gf-content-holder">
-                                              <h6 class="mkd-gf-cats">
-                                                <a href="http://ecologist.mikado-themes.com/donations/category/environment/" target="_blank">environment</a>
-                                              </h6>
-                                              <h3 class="mkd-gf-title">
-                                                <a href="http://ecologist.mikado-themes.com/donations/eco-friendly-campaign/">
-                                                  eco friendly
-                                                  </br>campaign
-                                                </a>
-                                              </h3>
-                                              <div class="mkd-gf-content">
-                                                <p>Ius te decore vituperatoribus, eos viris conclusionem que in, est tritani praesent ne. No his erat ubique eruditi.</p>
-                                              </div>
-                                              <div class="mkd-give-progress give-goal-progress">
-                                                <div class="mkd-progress-bar">
-                                                  <div class="mkd-progress-title-holder clearfix">
-                                                    <div class="mkd-progress-number-wrapper  ">
-                                                      <h5 class="mkd-progress-number">
-                                                        <span class="mkd-percent" >0</span>
-                                                      </h5>
-                                                    </div>
-                                                  </div>
-                                                  <div class="mkd-progress-content-outer" >
-                                                    <div data-percentage=100 class="mkd-progress-content " ></div>
-                                                  </div>
-                                                </div>
-                                                <div class="mkd-give-progress-btm">
-                                                  <div class="mkd-give-progress-raised">
-                                                    <h6 class="mkd-give-progress-title">Raised: </h6>
-                                                    <span class="mkd-give-progress-amount">$6,521.00</span>
-                                                  </div>
-                                                  <div class="mkd-give-progress-goal">
-                                                    <h6 class="mkd-give-progress-title">Goal: </h6>
-                                                    <span class="mkd-give-progress-amount">$5000.00</span>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="mkd-give-form-item">
-                                            <div class="mkd-give-top-holder">
-                                              <div class="mkd-give-top-image">
-                                                <a href="http://ecologist.mikado-themes.com/donations/save-animals-project/"></a>
-                                                <img width="1300" height="938" src="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-8.jpg" class="attachment-original size-original wp-post-image" alt="a" srcset="http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-8.jpg 1300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-8-300x216.jpg 300w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-8-768x554.jpg 768w, http://ecologist.mikado-themes.com/wp-content/uploads/2017/05/donation-f-img-8-1024x739.jpg 1024w" sizes="(max-width: 1300px) 100vw, 1300px" />
-                                              </div>
-                                              <div class="mkd-give-button-donations">
-                                                <a href="http://ecologist.mikado-themes.com/donations/save-animals-project/"   target="_self"  class="mkd-btn mkd-btn-solid mkd-btn-small mkd-btn-custom-hover-bg mkd-btn-custom-border-hover mkd-btn-custom-hover-color mkd-give-top-button mkd-btn-hover-solid" data-hover-bg-color="#ffffff" data-hover-color="#313646" data-hover-border-color="#ffffff" >
-                                                  <span class="mkd-btn-text">donate</span>
-                                                </a>
-                                                <div class="mkd-give-donations">
-                                                  <span class="mkd-give-donations-number">3</span>
-                                                  <span class="mkd-give-donations-label">donations                    </span>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="mkd-gf-content-holder">
-                                              <h6 class="mkd-gf-cats">
-                                                <a href="http://ecologist.mikado-themes.com/donations/category/environment/" target="_blank">environment</a>
-                                              </h6>
-                                              <h3 class="mkd-gf-title">
-                                                <a href="http://ecologist.mikado-themes.com/donations/save-animals-project/">
-                                                  save animals
-                                                  </br>project
-                                                </a>
-                                              </h3>
-                                              <div class="mkd-gf-content">
-                                                <p>Ius te decore vituperatoribus, eos viris conclusionemque in, est tritani praesent ne. No his erat ubique eruditi.</p>
-                                              </div>
-                                              <div class="mkd-give-progress give-goal-progress">
-                                                <div class="mkd-progress-bar">
-                                                  <div class="mkd-progress-title-holder clearfix">
-                                                    <div class="mkd-progress-number-wrapper  ">
-                                                      <h5 class="mkd-progress-number">
-                                                        <span class="mkd-percent" >0</span>
-                                                      </h5>
-                                                    </div>
-                                                  </div>
-                                                  <div class="mkd-progress-content-outer" >
-                                                    <div data-percentage=50 class="mkd-progress-content " ></div>
-                                                  </div>
-                                                </div>
-                                                <div class="mkd-give-progress-btm">
-                                                  <div class="mkd-give-progress-raised">
-                                                    <h6 class="mkd-give-progress-title">Raised: </h6>
-                                                    <span class="mkd-give-progress-amount">$3,500.00</span>
-                                                  </div>
-                                                  <div class="mkd-give-progress-goal">
-                                                    <h6 class="mkd-give-progress-title">Goal: </h6>
-                                                    <span class="mkd-give-progress-amount">$7000.00</span>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
+                                          <% end %>
                                         </div>
                                       </div>
                                     </div>
@@ -552,7 +421,7 @@ title: Grand Staircase Escalante Partners
                       </div>
                     </div>
                   </div>
-                </div>-->
+                </div>
                 <div class="vc_row wpb_row vc_row-fluid mkd-section vc_custom_1493376708793 mkd-content-aligment-left" style="">
                   <div class="clearfix mkd-full-section-inner">
                     <div class="wpb_column vc_column_container vc_col-sm-12">

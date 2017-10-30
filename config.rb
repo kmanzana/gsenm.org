@@ -15,6 +15,20 @@ helpers do
     return '' unless source
     Tilt[:markdown].new { source }.render(self)
   end
+
+  def preview(content)
+    return '' if content.empty?
+
+    text = content.find { |section| section.item_type.name == 'text' }
+
+    return '' if text.nil?
+
+    text.text.split.first(10).join(' ')
+  end
+
+  def format(date)
+    date.strftime('%m.%d.%Y')
+  end
 end
 
 # Configuration
@@ -42,6 +56,12 @@ dato.tap do |dato|
   dato.programs.each do |program|
     proxy "/programs/#{program.slug}.html", '/templates/program', locals: {
       program: program
+    }, ignore: true
+  end
+
+  dato.news_posts.each do |news_post|
+    proxy "/news/#{news_post.slug}.html", '/templates/news_post', locals: {
+      news_post: news_post
     }, ignore: true
   end
 end
