@@ -17,6 +17,10 @@ helpers do
   end
 end
 
+activate :google_analytics do |ga|
+  ga.tracking_id = ENV['GOOGLE_ANALYTICS_TRACKING_ID']
+end
+
 # Configuration
 activate :autoprefixer do |prefix|
   prefix.browsers = 'last 2 versions'
@@ -45,7 +49,6 @@ dato.tap do |dato|
     }, ignore: true
   end
 end
-
 
 configure :staging do
   activate :s3_sync do |s3_sync|
