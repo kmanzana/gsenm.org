@@ -18,12 +18,9 @@ helpers do
 
   def preview(content)
     return '' if content.empty?
-
     text = content.find { |section| section.item_type.name == 'text' }
-
     return '' if text.nil?
-
-    text.text.split.first(10).join(' ')
+    text.text.split.first(10).join(' ') + '...'
   end
 
   def format(date)
