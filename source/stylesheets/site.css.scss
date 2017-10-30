@@ -1,7 +1,7 @@
 $hdr-font-color: black;
 $hdr-font-stack: 'Poppins', sans-serif;/* 'Muli', sans-serif, 'Poppins', sans-serif, 'Quicksand', sans-serif, 'Hind', sans-serif;*/
 $hdr-font-size: 17px;
-$hdr-font-color-hv: #F0691B;
+$hdr-font-color-hv: #f0691b;
 $home-hdr-font-color: white;
 
 $slider-font-stack: 'Muli', sans-serif;
@@ -207,5 +207,13 @@ $text-font-stack: 'Muli', sans-serif;
 // utility styles
 .text-left {
   text-align: left;
+}
+
+.mkd-top-bar {
+  .textwidget {
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
