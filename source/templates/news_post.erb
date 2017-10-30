@@ -47,7 +47,17 @@
                               </div>
                             </figure>
                           </div>
+                        <% when 'video' %>
+                          <% video = content_section.video %>
+                          <% if video.provider == 'youtube' %>
+                            <iframe src="https://www.youtube.com/embed/<%= video.provider_uid %>?rel=0" width="825" height="464" frameborder="0" allowfullscreen></iframe>
+                          <% elsif video.provider == 'vimeo' %>
+                            <iframe src="https://player.vimeo.com/video/<%= video.provider_uid %>" width="825" height="464" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          <% end %>
                         <% end %>
+                        <div data-original-height="20" class="vc_empty_space" style="height: 20px">
+                          <span class="vc_empty_space_inner"></span>
+                        </div>
                       <% end %>
 
                       <!-- <div class="wpb_text_column wpb_content_element ">
