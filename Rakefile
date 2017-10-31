@@ -11,10 +11,10 @@ task :deploy do
   case branch
   when 'staging'
     puts 'running deploy to env: staging'
-    system deploy_command('staging')
+    system(deploy_command('staging')) || raise('staging deploy failed')
   when 'master'
     puts 'running deploy to env: production'
-    system deploy_command('production')
+    system(deploy_command('production')) || raise('production deploy failed')
   else
     puts 'not running deploy'
   end
