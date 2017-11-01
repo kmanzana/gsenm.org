@@ -1,0 +1,84 @@
+---
+title: Shop | Grand Staircase Escalante Partners
+---
+
+<% content_for :styles do %>
+  <%= stylesheet_link_tag '//cdn.snipcart.com/themes/2.0/base/snipcart.min.css',
+                          'shop' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' %>
+  <script src='https://cdn.snipcart.com/scripts/2.0/snipcart.js' data-api-key='MjJiYzQ5N2ItZjBjZi00YzZmLTk5MjQtYjM1Nzc2NWJmYTNlNjM2NDM5NDUzMTQxNzQ0MjM2>' id='snipcart'></script>
+  <!-- <script src='https://cdn.snipcart.com/scripts/2.0/snipcart.js' data-api-key='<%#= ENV['SNIPCART_API_KEY'] %>' id='snipcart'></script> -->
+<% end %>
+
+<%= partial 'header' %>
+
+<div class="mkd-wrapper">
+  <div class="mkd-wrapper-inner">
+    <div class="mkd-content">
+      <div class="mkd-content-inner">
+        <div class="mkd-container">
+          <div class="mkd-container-inner clearfix">
+            <div class="mkd-grid-row">
+              <div class="mkd-page-content-holder mkd-grid-col-12">
+                <div class="vc_row wpb_row vc_row-fluid mkd-section vc_custom_1495022114838 mkd-content-aligment-left" style="">
+                  <div class="clearfix mkd-full-section-inner">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                      <div class="vc_column-inner ">
+                        <div class="wpb_wrapper">
+                          <div class="woocommerce columns-3">
+                            <ul class="products">
+                              <% dato.products.each do |product| %>
+                                <li class="post-12192 product type-product status-publish has-post-thumbnail product_cat-materials product_cat-packaging product_tag-material product_tag-paper first instock shipping-taxable purchasable product-type-simple">
+                                  <div class="mkd-pl-outer">
+                                    <div class="mkd-pl-inner">
+                                      <div class="mkd-pl-image">
+                                        <img width="600" height="839" src="<%= product.photo.url %>" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="a" title="product-1">
+                                      </div>
+                                      <div class="mkd-pl-cart">
+                                        <% content_tag :button, {
+                                              class: 'snipcart-add-item button product_type_simple add_to_cart_button ajax_add_to_cart',
+                                              data: {
+                                                'item-id': product.id,
+                                                'item-name': product.name,
+                                                'item-price': product.price,
+                                                'item-url': "#{config[:host]}/shop.html"
+                                              }.merge(product_custom_field_attributes(product.custom_fields)) } do %>
+                                          <i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>
+                                        <% end %>
+                                        <!-- <a rel="nofollow" href="/shop/three-columns/?add-to-cart=12192" data-quantity="1" data-product_id="12192" data-product_sku="001" class="button product_type_simple add_to_cart_button ajax_add_to_cart">
+                                          <i class="icon-basket icons"></i>
+                                        </a> -->
+                                      </div>
+                                      <a href="http://ecologist.mikado-themes.com/product/paper-envelope/" class="woocommerce-LoopProduct-link"></a>
+                                    </div>
+                                    <div class="mkd-pl-text-wrapper">
+                                      <div class="mkd-pl-text-wrapper-inner">
+                                        <h5 class="mkd-product-list-title"><a href="http://ecologist.mikado-themes.com/product/paper-envelope/"><%= product.name %></a></h5>
+                                        <span class="price">
+                                          <span class="amount">
+                                            <span class="l">$</span><%= product.price %>
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

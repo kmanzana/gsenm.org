@@ -26,6 +26,14 @@ helpers do
   def format(date)
     date.strftime('%m.%d.%Y')
   end
+
+  def product_custom_field_attributes(custom_fields)
+    custom_fields.each_with_object({}).with_index(1) do |(field, attributes), index|
+      attributes["item-custom#{index}-name"] = field.name
+      attributes["item-custom#{index}-required"] = field.required
+      attributes["item-custom#{index}-options"] = field.options
+    end
+  end
 end
 
 activate :google_analytics do |ga|
@@ -38,6 +46,8 @@ activate :autoprefixer do |prefix|
 end
 
 configure :development do
+  config[:host] = 'http://localhost:4567'
+
   activate :livereload
 end
 
@@ -68,6 +78,8 @@ dato.tap do |dato|
 end
 
 configure :staging do
+  config[:host] = 'http://staging.gsenm.org'
+
   activate :s3_sync do |s3_sync|
     s3_sync.bucket                     = 'staging.gsenm.org'
     s3_sync.region                     = 'us-west-2'
@@ -84,6 +96,8 @@ configure :staging do
 end
 
 configure :production do
+  config[:host] = 'http://gsenm.org'
+
   activate :s3_sync do |s3_sync|
     s3_sync.bucket                     = 'gsenm.org'
     s3_sync.region                     = 'us-west-2'
