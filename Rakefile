@@ -14,6 +14,7 @@ task :deploy do
     system(deploy_command('staging')) || raise('staging deploy failed')
   when 'master'
     puts 'running deploy to env: production'
+    ENV['SNIPCART_API_KEY'] = ENV['SNIPCART_LIVE_API_KEY']
     system(deploy_command('production')) || raise('production deploy failed')
   else
     puts 'not running deploy'

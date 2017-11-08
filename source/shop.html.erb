@@ -9,8 +9,7 @@ title: Shop | Grand Staircase Escalante Partners
 
 <% content_for :scripts do %>
   <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' %>
-  <script src='https://cdn.snipcart.com/scripts/2.0/snipcart.js' data-api-key='MjJiYzQ5N2ItZjBjZi00YzZmLTk5MjQtYjM1Nzc2NWJmYTNlNjM2NDM5NDUzMTQxNzQ0MjM2' id='snipcart'></script>
-  <!-- <script src='https://cdn.snipcart.com/scripts/2.0/snipcart.js' data-api-key='<%#= ENV['SNIPCART_API_KEY'] %>' id='snipcart'></script> -->
+  <script src='https://cdn.snipcart.com/scripts/2.0/snipcart.js' data-api-key='<%= ENV['SNIPCART_API_KEY'] %>' id='snipcart'></script>
 <% end %>
 
 <%= partial 'header' %>
@@ -35,7 +34,7 @@ title: Shop | Grand Staircase Escalante Partners
                                   <div class="mkd-pl-outer">
                                     <div class="mkd-pl-inner">
                                       <div class="mkd-pl-image">
-                                        <img width="600" height="839" src="<%= product.photo.url %>" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="a" title="product-1">
+                                        <img width="600" height="839" src="<%= product.photo.url(w: 414) %>" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="a" title="product-1">
                                       </div>
                                       <div class="mkd-pl-cart">
                                         <% content_tag :button, {
@@ -52,11 +51,12 @@ title: Shop | Grand Staircase Escalante Partners
                                           <i class="icon-basket icons"></i>
                                         </a> -->
                                       </div>
-                                      <a href="http://ecologist.mikado-themes.com/product/paper-envelope/" class="woocommerce-LoopProduct-link"></a>
                                     </div>
                                     <div class="mkd-pl-text-wrapper">
                                       <div class="mkd-pl-text-wrapper-inner">
-                                        <h5 class="mkd-product-list-title"><a href="http://ecologist.mikado-themes.com/product/paper-envelope/"><%= product.name %></a></h5>
+                                        <h5 class="mkd-product-list-title">
+                                          <%= product.name %><!-- would be nice to make this a snipcart button too -->
+                                        </h5>
                                         <span class="price">
                                           <span class="amount">
                                             <span class="l">$</span><%= '%.2f' % product.price %>
