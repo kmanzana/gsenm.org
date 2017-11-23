@@ -20,7 +20,8 @@ helpers do
     return '' if content.empty?
     text = content.find { |section| section.item_type.name == 'text' }
     return '' if text.nil?
-    text.text.split.first(12).join(' ') + '...'
+    # remove any urls and markdownf for urls, then truncate to 12 words
+    text.text.gsub(/(?:f|ht)tps?:\/[^\s]+/, '').delete('[]()').truncate(150, separator: /\s/)
   end
 
   def format(date)
